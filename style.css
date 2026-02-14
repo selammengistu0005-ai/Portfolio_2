@@ -253,6 +253,55 @@ body.dark-mode .ball { transform: translateX(37px); background: var(--accent); b
     animation: fadeIn 0.3s ease-out;
 }
 
+/* --- Paste this below .bot-logo --- */
+
+.frame-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--accent-glow); 
+    color: var(--accent);
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.frame-btn:hover {
+    background: var(--accent);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
+}
+
+.frame-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.frame-btn:hover::after {
+    left: 120%;
+    opacity: 1;
+}
+
+/* --- End of Launch Button code --- */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -264,3 +313,4 @@ body.dark-mode .ball { transform: translateX(37px); background: var(--accent); b
     .profile-wrapper { flex-direction: column; text-align: center; }
     .cta-chips { justify-content: center; }
 }
+
