@@ -228,6 +228,36 @@ body {
 
 body.dark-mode .ball { transform: translateX(37px); background: var(--accent); box-shadow: 0 0 15px var(--accent); }
 
+/* Contact Info Styling */
+.contact-card {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: all 0.4s ease;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.show {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero { padding: 40px 5%; }
