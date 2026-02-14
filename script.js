@@ -88,3 +88,28 @@ document.querySelectorAll('.logic-card, .project-frame').forEach(el => {
     el.style.transition = "all 0.6s ease-out";
     observer.observe(el);
 });
+
+// 7. BUTTON INTERACTION LOGIC
+
+// Smooth Scroll to Projects
+const viewProjectsBtn = document.getElementById('view-projects-btn');
+viewProjectsBtn.addEventListener('click', () => {
+    document.querySelector('.project-gallery').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+});
+
+// Show Contact Info
+const talkBtn = document.getElementById('talk-btn');
+const contactInfo = document.getElementById('contact-info');
+
+talkBtn.addEventListener('click', () => {
+    contactInfo.classList.toggle('show');
+    
+    // Optional: Change button text when clicked
+    if (contactInfo.classList.contains('show')) {
+        talkBtn.textContent = "Close Contact";
+    } else {
+        talkBtn.textContent = "Let's Talk";
+    }
+});
